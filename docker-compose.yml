@@ -1,0 +1,13 @@
+services:
+  tudoapp:
+    container_name: tudoapp
+    image: tudoapp:latest
+    ports:
+      - 3000:3000
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    
