@@ -26,7 +26,7 @@ FROM node:20-slim as production
 WORKDIR /app
 
 
-COPY --from=builer /app ./
+COPY --from=builder /app ./
 
 RUN npm install
 
