@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: tudoapp 
+  namespace: tudo-ns 
+spec: 
+  replicas: 2 
+  selector: 
+    matchLabels:
+      app: tudo-app 
+  template: 
+    metadata:
+      labels: 
+        app: tudo-app
+    spec:
+      containers: 
+      - name: tudo-container
+        image: rk0617/tudoapp:latest 
+        ports: 
+          - containerPort: 3000

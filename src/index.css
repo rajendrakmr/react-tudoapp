@@ -294,3 +294,158 @@ body {
   opacity: 1;
 }
 /* End checkbox styles */
+.todo-list {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-top: 12px;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.todo-list li {
+  background: #f9f9f9;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.todo-list li:hover {
+  background: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+.todo-list li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-list li .delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.todo-list li .delete-btn:hover {
+  color: darkred;
+}
+
+@media (max-width: 768px) {
+  .todo-list {
+    padding: 12px;
+  }
+  .todo-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Container for each todo item */
+.todo {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.todo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Checkbox & Label */
+.todo .c-cb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo .c-cb input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007aff;
+  cursor: pointer;
+}
+
+.todo-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Buttons Group */
+.btn-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Default Button Style */
+.btn {
+  background: #f1f1f1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Primary Button (Edit, Save) */
+.btn__primary {
+  background: #007aff;
+  color: white;
+}
+
+.btn__primary:hover {
+  background: #005ecb;
+}
+
+/* Danger Button (Delete) */
+.btn__danger {
+  background: #ff3b30;
+  color: white;
+}
+
+.btn__danger:hover {
+  background: #d32f2f;
+}
+
+/* Edit Mode Form */
+.todo .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo .todo-text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.todo-text:focus {
+  border-color: #007aff;
+  outline: none;
+}
+
+/* Cancel Button */
+.todo-cancel {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.todo-cancel:hover {
+  background: #ddd;
+}
