@@ -16,5 +16,6 @@ spec:
         containers: 
           - name: tudo-container
             image: rk0617/tudoapp:latest
-            containerPort: 3000
+            ports:
+              - containerPort: 3000
       
