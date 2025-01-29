@@ -4,9 +4,9 @@ kind: Cluster
 nodes: 
   - role: control-plane
     image: kindest/node:v1.32.1
-  - role: control-plane
+  - role: worker
     image: kindest/node:v1.32.1
-  - role: control-plane
+  - role: worker
     image: kindest/node:v1.32.1
     
     
