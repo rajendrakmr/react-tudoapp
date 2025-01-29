@@ -3,23 +3,25 @@ apiVersion: apps/v1
 metadata: 
   name: tudo-deployment-hpa 
   namespace: tudo-ns 
-spec: 
-  replicas: 2
+spec:
+  replicas: 2 
   selector: 
-    apps: tudoapp-hpa
+    matchLabels:
+      app: tudo-app 
   template:
-    metadata:
-      name: tudoapp-hpa 
-    spec: 
-      containers:
-        - name: tudoapp-hpa-container 
-          image: rk0617/tudoapp:latest 
-          ports: 
-            - containerPort: 3000 
-          resource: 
-            requests: 
-              cpu: 100m
-              memory: 128Mi
-            limits:
-              cpu: 200m 
-              memory: 256Mi
+      metadata: 
+        labels: 
+          app: tudo-app
+      spec:
+        containers: 
+          - name: tudo-container
+            image: rk0617/tudoapp:latest
+            ports:
+              - containerPort: 3000
+            resource: 
+              requests: 
+                cpu: 100m
+                memory: 128Mi
+              limits:
+                cpu: 200m 
+                memory: 256Mi
